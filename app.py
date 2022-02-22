@@ -1,10 +1,13 @@
 import time
-
+import os
 import redis
 from flask import Flask
 
 app = Flask(__name__)
-cache = redis.Redis(host='localhost', port=6379)
+
+redis_host = os.environ['REDIS_HOST']
+redis_port = os.environ['REDIS_PORT']
+cache = redis.Redis(host=redis_host, port=redis_port)
 
 def get_hit_count():
     retries = 5
