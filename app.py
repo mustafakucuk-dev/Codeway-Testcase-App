@@ -10,7 +10,7 @@ app = Flask(__name__)
 #redis_port = os.environ['REDIS_PORT']
 #cache = redis.Redis(host=redis_host, port=redis_port)
 
-redis_host = "localhost"
+redis_host = "165.227.132.17"
 redis_port = 6379
 cache = redis.Redis(host=redis_host, port=redis_port)
 
