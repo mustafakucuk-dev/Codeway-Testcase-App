@@ -50,7 +50,7 @@ steps:
     set -x && \
     cd github_mustafakucuk-dev_codeway-testcase-env && \
     git add kubernetes.yaml && \
-    git commit -m "Deploying image us-central1-docker.pkg.dev/$PROJECT_ID/flask-app-repository/my-app:${SHORT_SHA}
+    git commit -m "Deploying image europe-west3-docker.pkg.dev/$PROJECT_ID/flask-app-repository/my-app:${SHORT_SHA}
     Built from commit ${COMMIT_SHA} of repository my-app
     Author: $(git log --format='%an <%ae>' -n 1 HEAD)" && \
     git push origin candidate
