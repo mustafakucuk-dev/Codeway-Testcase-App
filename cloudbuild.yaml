@@ -28,7 +28,7 @@ steps:
   - '-c'
   - |
     gcloud source repos clone github_mustafakucuk-dev_codeway-testcase-env && \
-    cd github_mustafakucuk-dev_codeway-testcase-env && \
+    cd Codeway-Testcase-Env && \
     git checkout candidate && \
     git config user.email $(gcloud auth list --filter=status:ACTIVE --format='value(account)')
 # This step generates the new manifest
@@ -39,7 +39,7 @@ steps:
   - '-c'
   - |
      sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" kubernetes.yaml.tpl | \
-     sed "s/COMMIT_SHA/${SHORT_SHA}/g" > github_mustafakucuk-dev_codeway-testcase-env/kubernetes.yaml
+     sed "s/COMMIT_SHA/${SHORT_SHA}/g" > Codeway-Testcase-Env/kubernetes.yaml
 # This step pushes the manifest back to hello-cloudbuild-env
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Push manifest
@@ -48,7 +48,7 @@ steps:
   - '-c'
   - |
     set -x && \
-    cd github_mustafakucuk-dev_codeway-testcase-env && \
+    cd Codeway-Testcase-Env && \
     git add kubernetes.yaml && \
     git commit -m "Deploying image europe-west3-docker.pkg.dev/$PROJECT_ID/flask-app-repository/my-app:${SHORT_SHA}
     Built from commit ${COMMIT_SHA} of repository my-app
