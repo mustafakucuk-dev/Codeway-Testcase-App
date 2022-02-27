@@ -1,5 +1,4 @@
 FROM python:3.7-slim
-RUN apk add --no-cache gcc musl-dev linux-headers
 RUN pip install flask 
 RUN pip install redis
 WORKDIR /app
