@@ -23,6 +23,7 @@ steps:
   - |
     set -x && \
     # Configure Git to create commits with Cloud Build's service account
+    git config user.email $(gcloud auth list --filter=status:ACTIVE --format='value(account)') && \
     git remote set-url origin https://mustafakucuk-dev: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@github.com/mustafakucuk-dev/Codeway-Testcase-Env.git && \
     # Switch to the production branch and copy the kubernetes.yaml file from the candidate branch
     git fetch origin production && git checkout production && \
