@@ -1,4 +1,3 @@
-# [START cloudbuild]
 steps:
 
 # This step builds the container image.
@@ -11,16 +10,13 @@ steps:
   - '.'
 
 # This step pushes the image to Artifact Registry
-# The PROJECT_ID and SHORT_SHA variables are automatically
-# replaced by Cloud Build.
 - name: 'gcr.io/cloud-builders/docker'
   id: Push
   args:
   - 'push'
   - 'europe-west3-docker.pkg.dev/$PROJECT_ID/flask-app-repository/my-app:$SHORT_SHA'
-# [END cloudbuild]
 
-# [START cloudbuild-trigger-cd]
+#This steps clones the env
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Clone env repository
   entrypoint: /bin/sh
@@ -29,8 +25,8 @@ steps:
   - |
     git clone https://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@github.com/mustafakucuk-dev/Codeway-Testcase-Env.git && \
     cd Codeway-Testcase-Env && \
-    git checkout candidate && \
-    git config user.email $(gcloud auth list --filter=status:ACTIVE --format='value(account)')
+    git checkout candidate
+
 # This step generates the new manifest
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Generate manifest
@@ -40,6 +36,7 @@ steps:
   - |
      sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" kubernetes.yaml.tpl | \
      sed "s/COMMIT_SHA/${SHORT_SHA}/g" > Codeway-Testcase-Env/kubernetes.yaml
+
 # This step pushes the manifest back to flask-cloudbuild-env
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Push manifest
@@ -54,4 +51,3 @@ steps:
     Built from commit ${COMMIT_SHA} of repository my-app
     Author: $(git log --format='%an <%ae>' -n 1 HEAD)" && \
     git push origin candidate
-# [END cloudbuild-trigger-cd]
