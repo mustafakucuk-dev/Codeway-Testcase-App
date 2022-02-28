@@ -19,7 +19,7 @@ cache = Redis(host=redis_host, port=redis_port, password=redis_pass)
 def get_hit_count():
     try:
         return cache.incr('hits')
-    except exceptions.ConnectionError as exc:
+    except Redis.exceptions.ConnectionError as exc:
         raise exc
 
 
