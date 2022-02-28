@@ -8,9 +8,9 @@ I created an applicable CI & CD pipeline for an application that runs on Google 
 
 Codeway-Testcase-App:  
 
-app.py - Our main application. 
-test_app.py - Unit Test file. 
-Dockerfile - Used for building app.py to create a Docker image.  
+app.py - Our main application      
+test_app.py - Unit Test file     
+Dockerfile - Used for building app.py to create a Docker image.   
 cloudbuild.yaml - Used by Google Cloud to configure CI/CD.   
 kubernetes.yaml.tpl - Kubernetes basic configuration template.   
 
