@@ -25,7 +25,7 @@ def get_hit_count():
 @app.route('/')
 def hello():
     count = get_hit_count()
-    return 'I have been visited {} times! \n'.format(count)
+    return 'I have been visited {} times ! \n'.format(count)
 
 @app.route('/changeDatabase', methods=['POST'])
 def changeDB():
