@@ -10,7 +10,7 @@ app = Flask('flask-cloudbuild')
 #redis_port = os.environ['REDIS_PORT']
 #cache = redis.Redis(host=redis_host, port=redis_port)
 
-redis_host = "165.227.132.17"
+redis_host = "redis-test-master.default.svc.cluster.local"
 redis_port = 6379
 cache = Redis(host=redis_host, port=redis_port)
 
