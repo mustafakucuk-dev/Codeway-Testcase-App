@@ -69,6 +69,7 @@ gcloud builds submit --tag="europe-west3-docker.pkg.dev/${PROJECT_ID}/flask-app-
 
 ---------------------------------------------------------
 
-Assuming permission related issues can be solved on user interface. And it's done.  
+Reference: https://cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build#shell    
+
 
 
