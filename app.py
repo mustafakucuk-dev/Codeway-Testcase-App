@@ -4,7 +4,7 @@ from redis import Redis
 from flask import Flask, redirect, url_for, render_template, request, session
 import socket
 
-app = Flask(__name__)
+app = Flask('flask-cloudbuild')
 
 #redis_host = os.environ['REDIS_HOST']
 #redis_port = os.environ['REDIS_PORT']
@@ -44,3 +44,5 @@ def changeDB():
     finally:
         test_db.close()
     
+if __name__ == '__main__':
+  app.run(host = '0.0.0.0', port = 8080)
