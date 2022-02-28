@@ -87,5 +87,6 @@ I have started to learn container orchestration last week. I tried to do my best
 
 # Test Environment
 
-Since everything is on cloud, i can add a project member to my project. You can email me : mustafakucuk.dev@gmail.com
+Since everything is on cloud, i can add a project member to my project. I need your gmail address to give an access to my environment.    
+You can email me : mustafakucuk.dev@gmail.com
 
