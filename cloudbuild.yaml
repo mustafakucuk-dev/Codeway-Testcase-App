@@ -36,7 +36,7 @@ steps:
   args:
   - '-c'
   - |
-    git clone https://github.com/mustafakucuk-dev/Codeway-Testcase-Env.git && \
+    git clone https://${_MY_GITHUB_KEY}@github.com/mustafakucuk-dev/Codeway-Testcase-Env.git && \
     cd Codeway-Testcase-Env && \
     git checkout candidate
     git config user.email $(gcloud auth list --filter=status:ACTIVE --format='value(account)')
