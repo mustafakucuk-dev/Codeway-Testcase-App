@@ -71,5 +71,21 @@ gcloud builds submit --tag="europe-west3-docker.pkg.dev/${PROJECT_ID}/flask-app-
 
 Reference: https://cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build#shell    
 
+# Not Implemented Ideas
 
+Changing database endpoint on run time:
+
+1- It can be managed by Dynamic DNS. Same domain can be redirected new database endpoint on deploy time.
+
+2- It can be managed by a proxy. We can configure a proxy server to point different database endpoint on deploy time.
+
+Using Helm Charts to deploy and communicate with redis server:
+
+1- I used a Redis chart on https://charts.bitnami.com/bitnami. Redis pods are functional but i can not modify my app to connect Redis on same namespace. So, i configured external Redis server.
+
+I have started to learn container orchestration last week. I tried to do my best but i can't implement everything in one week.
+
+# Test Environment
+
+Since everything is on cloud, i can add a project member to my project. You can email me : mustafakucuk.dev@gmail.com
 
