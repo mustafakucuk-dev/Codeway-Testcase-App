@@ -16,8 +16,8 @@ kubernetes.yaml.tpl - Kubernetes basic configuration template.
 
 Codeway-Testcase-Env:  
 
-cloudbuild.yaml - Used by Google Cloud to configure CD. 
-kubernetes.yaml - Kubernetes configuration file based on the given template. 
+cloudbuild.yaml - Used by Google Cloud to configure CD.          
+kubernetes.yaml - Kubernetes configuration file based on the given template.  
 
 # Application Details
 
