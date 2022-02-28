@@ -6,10 +6,13 @@ import socket
 
 app = Flask('flask-cloudbuild')
 
-redis_host = os.environ['DB_HOST']
-redis_port = os.environ['DB_PORT']
-redis_pass = os.environ['DB_PASSWORD']
+#redis_host = os.environ['DB_HOST']
+#redis_port = os.environ['DB_PORT']
+#redis_pass = os.environ['DB_PASSWORD']
 
+redis_host = "165.227.132.17"
+redis_port = 6379
+redis_pass = ""
 cache = Redis(host=redis_host, port=redis_port, password=redis_pass)
 
 def get_hit_count():

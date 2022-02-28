@@ -6,9 +6,8 @@ steps:
   entrypoint: /bin/sh
   args:
   - -c
-  - 'pip install flask; pip install redis' 
+  - 'pip install flask; pip install redis && python test_app.py -v'
   
-#&& python test_app.py -v'
 # This step builds the container image.
 - name: 'gcr.io/cloud-builders/docker'
   id: Build
@@ -17,10 +16,11 @@ steps:
   - '-t'
   - 'europe-west3-docker.pkg.dev/$PROJECT_ID/flask-app-repository/my-app:$SHORT_SHA'
   - '.'
-  - '--build-arg'
-  - 'REDIS_HOST=redis-test-master.default.svc.cluster.local'
-  - 'REDIS_PORT=6379'
-  - 'REDIS_PASSWORD=${_REDIS_PASSWORD}'
+
+#  - '--build-arg'
+#  - 'REDIS_HOST=redis-test-master.default.svc.cluster.local'
+#  - 'REDIS_PORT=6379'
+#  - 'REDIS_PASSWORD=${_REDIS_PASSWORD}'
 
 # This step pushes the image to Artifact Registry
 - name: 'gcr.io/cloud-builders/docker'
