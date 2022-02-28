@@ -19,7 +19,7 @@ steps:
   - '--build-arg'
   - 'REDIS_HOST=redis-test-master.default.svc.cluster.local'
   - 'REDIS_PORT=6379'
-  - 'REDIS_PASSWORD=${REDIS_PASSWORD}'
+  - 'REDIS_PASSWORD=${_REDIS_PASSWORD}'
 
 # This step pushes the image to Artifact Registry
 - name: 'gcr.io/cloud-builders/docker'
