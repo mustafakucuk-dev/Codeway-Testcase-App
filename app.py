@@ -6,13 +6,9 @@ import socket
 
 app = Flask('flask-cloudbuild')
 
-#redis_host = os.environ['REDIS_HOST']
-#redis_port = os.environ['REDIS_PORT']
-#cache = redis.Redis(host=redis_host, port=redis_port)
-
-redis_host = "redis-test-master.default.svc.cluster.local"
-redis_port = 6379
-redis_pass = "IIHI0hC6ed"
+redis_host = os.environ['DB_HOST']
+redis_port = os.environ['DB_PORT']
+redis_pass = os.environ['DB_PASSWORD']
 
 cache = Redis(host=redis_host, port=redis_port, password=redis_pass)
 
