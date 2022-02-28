@@ -23,9 +23,11 @@ kubernetes.yaml - Kubernetes configuration file based on the given template.
 
 I used an python app that counts the number of visitor and updates the "hits" value on Redis Database. It can be run as:  
 
-pip install flask,redis
+pip install flask,redis   
 
-python app.py
+python app.py     
+
+You can view also : http://34.159.221.13/       
 
 A redis server is configured as a default but you can modify app.py file to change DB. If you want to change database endpoint on run time:  
 
